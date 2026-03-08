@@ -9,27 +9,27 @@ commands:
   sellhand:
     description: Sell the item in your hand
     usage: "/sellhand"
-    permission: sellmanager.command.sellhand
+    permission: sellmanager.sellhand
 
   sellall:
     description: Sell all sellable items in your inventory
     usage: "/sellall"
-    permission: sellmanager.command.sellall
+    permission: sellmanager.sellall
 
   blockprices:
     description: Show sell prices
     usage: "/blockprices"
-    permission: sellmanager.command.blockprices
+    permission: sellmanager.blockprices
 
 permissions:
-  sellmanager.command.sellhand:
-    default: true
+  sellmanager.sellhand:
+    default: op
 
-  sellmanager.command.sellall:
-    default: true
+  sellmanager.sellall:
+    default: op
 
-  sellmanager.command.blockprices:
-    default: true
+  sellmanager.blockprices:
+    default: op
 
   sell.rank:
     default: op
