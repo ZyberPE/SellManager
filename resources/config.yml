@@ -1,0 +1,20 @@
+messages:
+  prefix: "§6[SellManager] §r"
+
+  no-permission: "§cYou do not have permission."
+  no-item-hand: "§cYou must hold an item."
+  not-sellable: "§cThis item cannot be sold."
+
+  sold-hand: "§aSold {amount}x {item} for ${price}"
+  sold-all: "§aSold {blocks} blocks for ${price}"
+
+  price-header: "§6----- Block Prices -----"
+  price-format: "§e{block} §7- §a${price}"
+
+sell-prices:
+  stone: 1
+  cobblestone: 2
+  coal_ore: 10
+  iron_ore: 15
+  gold_ore: 20
+  diamond_ore: 50
