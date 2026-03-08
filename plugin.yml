@@ -7,24 +7,28 @@ depend: [EconomyAPI]
 
 commands:
   sellhand:
-    description: Sell item in your hand
-    permission: sellmanager.sellhand
+    description: Sell the item in your hand
+    usage: "/sellhand"
+    permission: sellmanager.command.sellhand
 
   sellall:
-    description: Sell all items in inventory
+    description: Sell all sellable items in your inventory
+    usage: "/sellall"
+    permission: sellmanager.command.sellall
 
   blockprices:
-    description: Show block prices
-    permission: sellmanager.blockprices
+    description: Show sell prices
+    usage: "/blockprices"
+    permission: sellmanager.command.blockprices
 
 permissions:
-  sellmanager.sellhand:
+  sellmanager.command.sellhand:
     default: true
 
-  sellmanager.sellall:
+  sellmanager.command.sellall:
     default: true
 
-  sellmanager.blockprices:
+  sellmanager.command.blockprices:
     default: true
 
   sell.rank:
