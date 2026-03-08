@@ -71,6 +71,7 @@ class Main extends PluginBase{
                 $sender->sendMessage($prefix . $messages["not-sellable"]);
                 return true;
 
+
             case "sellall":
 
                 if(!$sender->hasPermission("sellmanager.sellall")){
@@ -111,32 +112,42 @@ class Main extends PluginBase{
                     );
 
                     $sender->sendMessage($prefix . $msg);
+
+                }else{
+                    $sender->sendMessage($prefix . $messages["not-sellable"]);
                 }
 
                 return true;
 
-            case "blockprices":
 
-                if(!$sender->hasPermission("sellmanager.blockprices")){
+            case "blockprice":
+
+                if(!$sender->hasPermission("sellmanager.blockprice")){
                     $sender->sendMessage($prefix . $messages["no-permission"]);
                     return true;
                 }
 
-                $sender->sendMessage($prefix . $messages["price-header"]);
+                $item = $sender->getInventory()->getItemInHand();
+
+                if($item->isNull()){
+                    $sender->sendMessage($prefix . $messages["no-item-hand"]);
+                    return true;
+                }
 
                 foreach($prices as $block => $price){
 
-                    $displayPrice = $price * $multiplier;
+                    $parsed = StringToItemParser::getInstance()->parse($block);
 
-                    $msg = str_replace(
-                        ["{block}","{price}"],
-                        [$block,$displayPrice],
-                        $messages["price-format"]
-                    );
+                    if($parsed !== null && $parsed->getTypeId() === $item->getTypeId()){
 
-                    $sender->sendMessage($msg);
+                        $displayPrice = $price * $multiplier;
+
+                        $sender->sendMessage($prefix . "§e".$block." §7sells for §a$".$displayPrice." §7each.");
+                        return true;
+                    }
                 }
 
+                $sender->sendMessage($prefix . $messages["not-sellable"]);
                 return true;
         }
 
