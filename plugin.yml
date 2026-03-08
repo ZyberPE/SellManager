@@ -1,0 +1,31 @@
+name: SellManager
+main: SellManager\Main
+version: 1.0.0
+api: 5.0.0
+author: ZyberPE
+depend: [EconomyAPI]
+
+commands:
+  sellhand:
+    description: Sell item in your hand
+    permission: sellmanager.sellhand
+
+  sellall:
+    description: Sell all items in inventory
+
+  blockprices:
+    description: Show block prices
+    permission: sellmanager.blockprices
+
+permissions:
+  sellmanager.sellhand:
+    default: true
+
+  sellmanager.sellall:
+    default: true
+
+  sellmanager.blockprices:
+    default: true
+
+  sell.rank:
+    default: op
