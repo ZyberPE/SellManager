@@ -24,13 +24,13 @@ commands:
 
 permissions:
   sellmanager.sellhand:
-    default: op
+    default: true
 
   sellmanager.sellall:
-    default: op
+    default: true
 
   sellmanager.blockprice:
-    default: op
+    default: true
 
   sell.rank:
     default: op
