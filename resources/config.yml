@@ -3,7 +3,7 @@ messages:
 
   no-permission: "§cYou do not have permission."
   no-item-hand: "§cYou must hold an item."
-  not-sellable: "§cThis item cannot be sold."
+  not-sellable: "§cThis item cannot be sold at this time."
 
   sold-hand: "§aSold {amount}x {item} for ${price}"
   sold-all: "§aSold {blocks} blocks for ${price}"
